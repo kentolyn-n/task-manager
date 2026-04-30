@@ -3,7 +3,6 @@
 import { useState } from "react";
 import {
   PencilSquareIcon,
-  CheckCircleIcon,
   CalendarDaysIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/24/outline";
@@ -70,7 +69,6 @@ export default function TaskForm() {
         </label>
 
         <div className="relative">
-          <CheckCircleIcon className="absolute left-3 top-3 w-4 sm:w-5 h-4 sm:h-5 text-gray-500" />
 
           <select
             value={status}
