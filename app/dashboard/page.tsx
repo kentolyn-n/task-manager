@@ -2,30 +2,33 @@ import TaskForm from "@/app/components/createtasks";
 
 export default function Dashboard() {
   return (
-    <div className="space-y-6">
-      
+    <div className="space-y-6 px-4 sm:px-6 lg:px-10">
+
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold">Home Dashboard</h1>
-        <p className="text-sm text-gray-500">
+        <h1 className="text-2xl sm:text-3xl font-bold">
+          Home Dashboard
+        </h1>
+
+        <p className="text-sm text-gray-500 mt-1">
           Create and manage your daily tasks.
         </p>
       </div>
 
       {/* Main Layout */}
-      <div className="flex gap-8">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
 
         {/* Left: Task Form */}
-        <div className="flex-1">
+        <div className="w-full lg:flex-1">
           <TaskForm />
         </div>
 
         {/* Right: Info Panel */}
-        <div className="flex-1 hidden lg:flex items-center justify-center">
-          
+        <div className="w-full lg:flex-1 hidden lg:flex items-center justify-center">
+
           <div className="space-y-6 max-w-md">
-            
-            <h2 className="text-2xl font-bold leading-snug">
+
+            <h2 className="text-xl sm:text-2xl font-bold leading-snug">
               Stay organized. Stay consistent.
             </h2>
 
@@ -42,7 +45,7 @@ export default function Dashboard() {
             </p>
 
             <div className="pt-2">
-              <p className="font-semibold text-blue-600">
+              <p className="font-semibold text-blue-600 text-sm sm:text-base">
                 “Small progress every day leads to big results.”
               </p>
             </div>
@@ -54,7 +57,7 @@ export default function Dashboard() {
       </div>
 
       {/* Footer message */}
-      <div className="rounded-xl border border-dashed text-center p-6 text-sm text-gray-500">
+      <div className="rounded-xl border border-dashed text-center p-4 sm:p-6 text-sm text-gray-500">
         THANK YOU FOR COMPLETING TASK.
       </div>
 

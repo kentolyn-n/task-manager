@@ -16,8 +16,8 @@ export default function TaskForm() {
   const [date, setDate] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent ) => {
-    e.preventDefault(); // stops sending data to server
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
     const newTask = {
       id: crypto.randomUUID(),
@@ -26,7 +26,7 @@ export default function TaskForm() {
       date,
     };
 
-    addTask(newTask); // use locally
+    addTask(newTask);
 
     setTask("");
     setStatus("pending");
@@ -38,10 +38,12 @@ export default function TaskForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-xl space-y-4 rounded-xl border p-6 shadow-sm bg-[var(--background)] text-[var(--foreground)]"
+      className="w-full max-w-xl space-y-4 rounded-xl border p-4 sm:p-6 shadow-sm bg-[var(--background)] text-[var(--foreground)]"
     >
-      <h2 className="text-xl font-semibold flex items-center gap-2">
-        <PencilSquareIcon className="w-6 h-6" />
+
+      {/* Title */}
+      <h2 className="text-lg sm:text-xl font-semibold flex items-center gap-2">
+        <PencilSquareIcon className="w-5 sm:w-6 h-5 sm:h-6" />
         Create Task
       </h2>
 
@@ -56,7 +58,7 @@ export default function TaskForm() {
           onChange={(e) => setTask(e.target.value)}
           rows={4}
           placeholder="Write your task here..."
-          className="w-full rounded-md border p-3 outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full rounded-md border p-3 text-sm sm:text-base outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
       </div>
@@ -68,12 +70,14 @@ export default function TaskForm() {
         </label>
 
         <div className="relative">
-          <CheckCircleIcon className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+          <CheckCircleIcon className="absolute left-3 top-3 w-4 sm:w-5 h-4 sm:h-5 text-gray-500" />
 
           <select
             value={status}
-            onChange={(e) => setStatus(e.target.value as "pending" | "done")}
-            className="w-full rounded-md border p-3 pl-10 outline-none focus:ring-2 focus:ring-blue-500"
+            onChange={(e) =>
+              setStatus(e.target.value as "pending" | "done")
+            }
+            className="w-full rounded-md border p-3 pl-10 text-sm sm:text-base outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="pending">Pending</option>
             <option value="done">Done</option>
@@ -88,13 +92,13 @@ export default function TaskForm() {
         </label>
 
         <div className="relative">
-          <CalendarDaysIcon className="absolute left-3 top-3 w-5 h-5 text-gray-500" />
+          <CalendarDaysIcon className="absolute left-3 top-3 w-4 sm:w-5 h-4 sm:h-5 text-gray-500" />
 
           <input
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-full rounded-md border p-3 pl-10 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-md border p-3 pl-10 text-sm sm:text-base outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
@@ -103,10 +107,12 @@ export default function TaskForm() {
       {/* Submit */}
       <button
         type="submit"
-        className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition"
+        className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition w-full sm:w-auto justify-center"
       >
         <PaperAirplaneIcon className="w-5 h-5" />
+        Add Task
       </button>
+
     </form>
   );
 }
