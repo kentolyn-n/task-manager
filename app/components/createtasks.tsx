@@ -77,7 +77,7 @@ export default function TaskForm() {
             onChange={(e) =>
               setStatus(e.target.value as "pending" | "done")
             }
-            className="w-full rounded-md border p-3 pl-10 text-sm sm:text-base outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded-md border p-3 text-sm sm:text-base outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="pending">Pending</option>
             <option value="done">Done</option>
@@ -86,7 +86,7 @@ export default function TaskForm() {
       </div>
 
       {/* Date */}
-      <div>
+      <div >
         <label className="mb-1 block text-sm font-medium">
           {status === "pending" ? "Due Date" : "Completed Date"}
         </label>
