@@ -33,17 +33,18 @@ export default function SideBar() {
 
   const icons =
     theme === "dark"
-      ? <SunIcon className="w-8 sm:w-10" />
-      : <MoonIcon className="w-6 sm:w-7" />;
+      ? <SunIcon className="w-8 sm:w-10 hover:bg-sky-100 hover:text-blue-600 dark:hover:bg-gray-700" />
+      : <MoonIcon className="w-6 sm:w-7 hover:bg-sky-100 hover:text-blue-600 dark:hover:bg-gray-700" />;
+      
 
   const toggleText =
     theme === "dark" ? "Dark Mode" : "Light Mode";
 
   return (
-    <div className={`${inter.className} w-64 h-screen bg-[var(--background)] text-[var(--foreground)] border-r p-4 flex flex-col`}>
+    <div className={`${inter.className} w-30 lg:w-64 h-screen bg-[var(--background)] text-[var(--foreground)] border-r lg:p-4 lg:items-start items-center flex flex-col`}>
 
       {/* Title */}
-      <h1 className="text-xl font-bold mb-6">
+      <h1 className="hidden lg:block text-xl font-bold mb-6">
         Task Dashboard
       </h1>
 
@@ -70,12 +71,11 @@ export default function SideBar() {
             </Link>
           );
         })}
-      </nav>
 
-      {/* Controls */}
+        {/* Controls */}
       <div className="border-t pt-4 mt-4">
 
-        <h1 className="font-semibold mb-2">
+        <h1 className="font-semibold mb-2 hidden lg:block">
           Controls Dashboard Panel
         </h1>
 
@@ -83,7 +83,7 @@ export default function SideBar() {
           className="flex items-center w-full p-3 rounded-md hover:bg-sky-100 dark:hover:bg-gray-700 active:scale-95 transition"
           onClick={toggleTheme}
         >
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2 items-center lg:items-start">
             {icons}
           </span>
 
@@ -93,7 +93,7 @@ export default function SideBar() {
         </button>
 
       </div>
-
+      </nav>
     </div>
   );
 }

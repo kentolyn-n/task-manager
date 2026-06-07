@@ -15,7 +15,7 @@ export default function StatusPage() {
   const completed = tasks.filter((t) => t.status === "done").length;
 
   const progress =
-    total === 0 ? 0 : Math.round((completed / total) * 100);
+    total === 0 ? 0 : Math.round((completed / total) * 10);
 
   return (
     <div className="space-y-6 px-4 sm:px-6 lg:px-10">
@@ -68,24 +68,22 @@ export default function StatusPage() {
 
         <p>
           Your task management system is designed to help you stay focused on
-          what matters most. By separating pending and completed tasks, you
-          reduce mental clutter and improve decision-making speed throughout
-          the day.
+          what matters most.
         </p>
 
-        <p>
+        <p className="hidden lg:block">
           Consistency is more important than intensity. Completing small tasks
           regularly builds momentum, which leads to long-term productivity growth.
           Try to maintain a steady workflow rather than rushing everything at once.
         </p>
 
-        <p>
+        <p className="hidden lg:block">
           Pending tasks represent your active responsibilities. Prioritize them
           based on urgency and deadlines. Completed tasks are a reflection of
           your progress — review them to understand your performance patterns.
         </p>
 
-        <p>
+        <p className="hidden lg:block">
           Keep your workspace clean, your goals clear, and your focus aligned.
           A well-structured task system reduces stress and increases clarity in
           daily execution.
