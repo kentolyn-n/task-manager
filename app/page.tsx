@@ -1,7 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useTheme } from './context/ThemeToggle';
 export default function Home() {
+  const {theme} = useTheme()
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col">
+    <main className="min-h-screen flex flex-col">
 
       {/* HERO SECTION */}
       <section className="flex flex-col items-center justify-center text-center px-6 py-20">
@@ -18,14 +22,14 @@ export default function Home() {
         <div className="mt-8 flex gap-4">
           <Link
             href="/dashboard"
-            className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+            className={`px-6 py-3 rounded-lg text-white hover:bg-blue-700 transition ${theme === "dark" ? "bg-gray-500" : "bg-blue-600"} `}
           >
             Go to Dashboard
           </Link>
 
           <Link
             href="/completed"
-            className="px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
+            className="px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-500 transition"
           >
             View Completed
           </Link>
@@ -36,21 +40,21 @@ export default function Home() {
       <section className="px-6 pb-20 hidden lg:block">
         <div className="grid gap-6 md:grid-cols-3">
 
-          <div className="p-6 bg-white rounded-xl shadow-sm border">
+          <div className="p-6 rounded-xl shadow-sm border">
             <h2 className="font-semibold text-lg">Create Tasks</h2>
             <p className="text-sm text-gray-600 mt-2">
               Quickly add tasks with status and due dates.
             </p>
           </div>
 
-          <div className="p-6 bg-white rounded-xl shadow-sm border">
+          <div className="p-6 rounded-xl shadow-sm border">
             <h2 className="font-semibold text-lg">Track Progress</h2>
             <p className="text-sm text-gray-600 mt-2">
               Separate pending and completed tasks automatically.
             </p>
           </div>
 
-          <div className="p-6 bg-white rounded-xl shadow-sm border">
+          <div className="p-6 rounded-xl shadow-sm border">
             <h2 className="font-semibold text-lg">Stay Organized</h2>
             <p className="text-sm text-gray-600 mt-2">
               Keep your workflow clean and structured daily.
@@ -61,7 +65,7 @@ export default function Home() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-blue-600 text-white py-5 px-6 text-center">
+      <section className={`text-white py-5 px-6 text-center ${theme === "dark" ? "" : "bg-blue-600"}`}>
         <h2 className="text-2xl md:text-3xl font-bold">
           Start managing your tasks today
         </h2>
