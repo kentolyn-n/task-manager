@@ -33,8 +33,8 @@ export default function SideBar() {
 
   const icons =
     theme === "dark"
-      ? <SunIcon className="w-8 sm:w-10 hover:bg-sky-100 hover:text-blue-600 dark:hover:bg-gray-700" />
-      : <MoonIcon className="w-6 sm:w-7 hover:bg-sky-100 hover:text-blue-600 dark:hover:bg-gray-700" />;
+      ? <SunIcon className="w-8 sm:w-10" />
+      : <MoonIcon className="w-6 sm:w-7" />;
       
 
   const toggleText =
@@ -80,7 +80,7 @@ export default function SideBar() {
         </h1>
 
         <button
-          className="flex items-center w-full p-3 rounded-md hover:bg-sky-100 dark:hover:bg-gray-700 active:scale-95 transition"
+          className="flex items-center w-full p-3 rounded-md hover:bg-sky-100 dark:hover:bg-gray-700 active:scale-95 transition hover:text-gray-600"
           onClick={toggleTheme}
         >
           <span className="flex items-center gap-2 items-center lg:items-start">

@@ -47,7 +47,7 @@ export default function AboutPage() {
       </div>
 
       {/* Footer section */}
-      <div className="p-4 sm:p-6 rounded-xl border bg-[var(--background)] text-[var(--foreground)] text-center">
+      <div className="p-4 sm:p-6 rounded-xl border bg-[var(--background)] text-[var(--foreground)] text-center hidden lg:block">
         <p className="text-xs sm:text-sm opacity-70">
           Built with focus on learning, scalability, and real-world structure.
         </p>

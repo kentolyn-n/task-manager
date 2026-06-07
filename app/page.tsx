@@ -33,7 +33,7 @@ export default function Home() {
       </section>
 
       {/* FEATURES */}
-      <section className="px-6 pb-20">
+      <section className="px-6 pb-20 hidden lg:block">
         <div className="grid gap-6 md:grid-cols-3">
 
           <div className="p-6 bg-white rounded-xl shadow-sm border">
@@ -61,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-blue-600 text-white py-16 px-6 text-center">
+      <section className="bg-blue-600 text-white py-5 px-6 text-center">
         <h2 className="text-2xl md:text-3xl font-bold">
           Start managing your tasks today
         </h2>
